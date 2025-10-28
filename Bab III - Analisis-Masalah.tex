@@ -6,19 +6,66 @@
 % ============================================================================================
 \chapter{ANALISIS MASALAH}
 \label{chap:analisis-masalah}
+
 \section{Analisis Kondisi Saat Ini}
-Menurut \textcite{laudon2020}, gambarkan terlebih dahulu model konseptual sistem yang ada saat ini. Model konseptual ini berisi berbagai komponen atau subsitem dan interaksi antarsubsistem tersebut. Setelah itu, berikan penjelasan tentang masalah yang ada pada sistem tersebut. Paragraf berikut berisi contoh penjabaran masalah sistem informasi fasilitas kesehatan untuk pasien \autocite{pressman2019}. 
+Model konseptual sistem kontrol akses yang ada saat ini di Gedung ITB Innovation Park (IIP) masih mengandalkan, atau setidaknya mempertimbangkan, metode konvensional. Komponen utamanya adalah kunci fisik dan kartu akses. Ketiadaan sistem modern yang terimplementasi secara optimal ini  menimbulkan beberapa masalah fundamental.
+
+Masalah utama dari sistem konvensional ini adalah tingkat keamanannya yang terbatas. Metode kunci fisik dan kartu akses sangat rentan terhadap risiko umum seperti kehilangan, pencurian, atau duplikasi yang tidak sah. Mengingat Gedung IIP berfungsi sebagai pusat inovasi yang menyimpan berbagai aset bernilai tinggi , celah keamanan ini menciptakan sebuah kerentanan keamanan yang nyata dan mendesak untuk segera diatasi. Sistem yang ada saat ini (atau ketiadaan sistem yang memadai) dinilai tidak lagi efisien dalam pengelolaan dan tidak mampu melindungi aset di dalamnya secara optimal. 
+
 \section{Analisis Kebutuhan}
-\lipsum[4]
+Analisis Kebutuhan adalah proses untuk mendefinisikan apa yang harus dilakukan oleh sistem untuk menyelesaikan masalah yang ada.
+
 \subsection{Identifikasi Masalah Pengguna}
-\lipsum[5]
+Berdasarkan analisis kondisi saat ini, terdapat dua kelompok pengguna utama dengan masalah yang spesifik:
+\begin{enumerate}
+    \item  Penghuni Gedung (Pegawai, Anggota Terdaftar, Staf)
+        \begin{enumerate}
+            \item Mengalami kesulitan dengan metode akses konvensional yang merepotkan (harus membawa kartu/kunci) dan tidak higienis (harus menyentuh perangkat bersama).
+            \item Membutuhkan sistem yang memberikan "kemudahan bagi pengguna".
+            \item Memiliki risiko keamanan pribadi jika kunci atau kartu akses mereka hilang atau diduplikasi.
+        \end{enumerate}
+
+    \item  Manajemen/Pengelola Gedung IIP
+        \begin{enumerate}
+            \item Menghadapi masalah utama berupa kerentanan keamanan terhadap aset bernilai tinggi.
+            \item Kesulitan mengelola dan melacak hak akses secara efisien menggunakan metode konvensional.
+            \item Kekurangan data operasional mengenai pola keluar-masuk, yang dapat digunakan untuk efisiensi.
+        \end{enumerate}
+\end{enumerate}
+
 \subsection{Kebutuhan Fungsional}
-\lipsum[6]
+Berdasarkan rumusan masalah dan tujuan, kebutuhan fungsional untuk prototipe yang diusulkan adalah sebagai berikut:
+\begin{enumerate}
+    \item FR-1: Sistem harus dapat mengakuisisi citra wajah pengguna secara real-time melalui sensor kamera.
+    \item FR-2: Sistem harus dapat melakukan proses otentikasi (verifikasi) dengan membandingkan citra wajah yang ditangkap dengan basis data pengguna yang terdaftar.
+    \item FR-3: Sistem harus dapat memberikan perintah untuk membuka aktuator (kunci elektronik) jika otentikasi pengguna berhasil (memberikan hak akses).
+    \item FR-4: Sistem harus dapat menolak akses (tidak mengirim perintah ke kunci elektronik) jika otentikasi gagal atau wajah tidak terdaftar.
+\end{enumerate}
+
 \subsection{Kebutuhan Nonfungsional}
-\lipsum[7]
+Kebutuhan nonfungsional (BAGAIMANA sistem bekerja) didefinisikan secara spesifik dalam kriteria keberhasilan tugas akhir ini:
+\begin{enumerate}
+    \item Kecepatan (Waktu Respon): Waktu yang dibutuhkan sistem untuk menyelesaikan satu siklus proses otentikasi—mulai dari deteksi wajah hingga pengiriman perintah ke kunci elektronik—harus kurang dari 3 detik .
+    \item Akurasi: Sistem harus mampu melakukan otentikasi wajah pengguna yang terdaftar dengan tingkat akurasi di atas 95\% pada kondisi pengujian yang terkontrol.
+    \item Keandalan (Reliability): Sistem harus mampu secara konsisten membedakan antara pengguna terdaftar (memberikan akses) dan pengguna tidak terdaftar (menolak akses).
+\end{enumerate}
 
 \section{Analisis Pemilihan Solusi}
+
 \subsection{Alternatif Solusi}
-\lipsum[8]
+Berdasarkan studi yang dilakukan di Latar Belakang, terdapat dua kategori utama solusi untuk kontrol akses:
+\begin{enumerate}
+    \item Solusi Konvensional: Meliputi penggunaan kunci fisik dan kartu akses.
+    \item Solusi Modern (Biometrik): Meliputi teknologi seperti pemindai sidik jari, pemindai iris mata, dan pengenalan wajah.
+\end{enumerate}
+
 \subsection{Analisis Penentuan Solusi}
-\lipsum[9]
+Solusi Konvensional (Alternatif 1) ditolak meskipun biaya implementasinya mungkin relatif rendah. Alasan utamanya adalah solusi ini memiliki tingkat keamanan yang terbatas dan tidak menyelesaikan masalah inti, yaitu kerentanan terhadap risiko duplikasi dan kehilangan.
+
+Dari Solusi Biometrik (Alternatif 2), teknologi pengenalan wajah dipilih sebagai solusi yang diusulkan. Analisis penentuan ini didasarkan pada beberapa keunggulan kompetitif yang ditawarkannya dibandingkan biometrik lain:
+\begin{enumerate}
+    \item Higienis dan Nyaman: Bersifat non-kontak (contactless), yang lebih higienis dan memberikan kemudahan lebih bagi pengguna.
+    \item Tidak Perlu Perangkat Tambahan: Pengguna tidak perlu membawa perangkat fisik tambahan seperti kartu atau mengingat PIN.
+    \item Akurasi yang Andal: Teknologi pengenalan wajah modern memiliki tingkat akurasi yang semakin andal untuk kebutuhan keamanan.
+\end{enumerate}
+Berdasarkan analisis ini, pengenalan wajah dianggap sebagai pilihan yang paling sesuai untuk diterapkan di lingkungan modern seperti Gedung IIP.

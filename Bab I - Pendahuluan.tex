@@ -5,34 +5,81 @@
 \label{chap:pendahuluan}
 % --- Latar Belakang ---
 \section{Latar Belakang}
-Latar Belakang menjelaskan dasar pemikiran, motivasi, kebutuhan, alasan, atau urgensi pemilihan masalah tugas akhir. Subbab ini berisi penjelasan ringkas tentang kondisi atau situasi yang ada saat ini terkait dengan topik yang dibahas. Tujuan utamanya adalah untuk memberikan informasi secukupnya kepada pembaca agar memahami topik yang akan dibahas. Dalam subbab ini, jelaskan hal-hal berikut ini:
+Di era digital saat ini, pengembangan bangunan cerdas (smart building) menjadi sebuah kebutuhan fundamental untuk mencapai tingkat keamanan dan efisiensi operasional yang tinggi. Salah satu aspek krusial dalam operasional bangunan cerdas adalah sistem kontrol akses. Namun, seiring dengan kemajuan teknologi, metode kontrol akses konvensional seperti kunci fisik dan kartu akses mulai menunjukkan kelemahan yang signifikan. Metode ini sangat rentan terhadap berbagai risiko, seperti kehilangan, pencurian, atau duplikasi yang tidak sah. Celah keamanan ini dapat secara langsung membahayakan aset berharga dan penghuni di dalam bangunan.
+
+Konteks permasalahan ini menjadi sangat relevan dengan kondisi di Gedung ITB Innovation Park (IIP). Sebagai bangunan yang tergolong baru dan menjadi pusat inovasi, Gedung IIP menyimpan berbagai aset bernilai tinggi. Akan tetapi, saat ini gedung tersebut belum memiliki sistem kontrol akses modern yang terimplementasi secara optimal. Ketiadaan sistem yang aman  ini menciptakan kerentanan keamanan yang nyata dan mendesak untuk segera diatasi. Situasi ini memberikan kesempatan strategis untuk mengimplementasikan solusi teknologi modern sebagai studi kasus nyata yang solutif dan dapat menjadi percontohan.
+
+Untuk mengatasi permasalahan kontrol akses, berbagai solusi telah ada dan dapat diterapkan. Solusi konvensional yang umum digunakan adalah kunci fisik dan kartu akses. Meskipun biaya implementasinya relatif rendah, solusi ini memiliki tingkat keamanan yang terbatas karena risiko duplikasi dan kehilangan seperti yang telah disebutkan. Di sisi lain, telah berkembang berbagai solusi modern berbasis teknologi biometrik, seperti pemindai sidik jari, pemindai iris mata, dan pengenalan wajah.
+
+Dari berbagai alternatif modern tersebut, teknologi pengenalan wajah (face recognition), sebagai salah satu inovasi dalam bidang computer vision, menawarkan keunggulan kompetitif. Solusi ini bersifat non-kontak (contactless), lebih higienis, dan memberikan kemudahan bagi pengguna karena tidak memerlukan perangkat fisik tambahan. Dengan tingkat akurasi yang semakin andal, pengenalan wajah menjadi pilihan yang paling sesuai untuk diterapkan di lingkungan modern seperti Gedung IIP.
+
+Berdasarkan analisis tersebut, solusi yang diusulkan adalah pengembangan "Sistem Pengenalan Wajah untuk Akses Kontrol Bangunan Cerdas". Sistem ini akan diwujudkan dalam bentuk prototipe fungsional yang mengintegrasikan perangkat keras Internet of Things (IoT), seperti kamera untuk akuisisi citra wajah dan kunci elektronik (electronic lock) sebagai aktuator pintu.
+
+Lebih lanjut, sistem yang diusulkan ini memiliki potensi skalabilitas yang tinggi dan dapat diperluas dengan berbagai fitur tambahan untuk meningkatkan fungsionalitasnya, antara lain:
 \begin{enumerate}
-\item	Kondisi atau situasi topik yang dibahas beserta permasalahannya, misalnya tentang pengelolaan informasi di puskesmas daerah pedesaan dan masalah yang dihadapi.
-\item	Berbagai solusi yang telah diterapkan atau solusi yang tersedia dan memungkinkan untuk diterapkan untuk menyelesaikan masalah tersebut.
+\item	Sistem Absensi Otomatis: Mengintegrasikan fungsi pencatatan kehadiran secara otomatis ketika pegawai atau anggota terdaftar memasuki area gedung.
+\item	Deteksi Pengunjung Tidak Dikenal: Menambahkan fitur keamanan untuk mengidentifikasi, mencatat, dan memberikan notifikasi jika ada wajah yang tidak terdaftar dalam sistem mencoba mengakses.
+\item   Dashboard Analisis Data: Membangun modul visualisasi data untuk memantau dan menganalisis pola penggunaan akses, seperti jam sibuk dan frekuensi keluar-masuk. Data ini dapat dimanfaatkan oleh manajemen untuk pengambilan keputusan berbasis data demi efisiensi operasional dan peningkatan keamanan.
 \end{enumerate}
 
 % --- Rumusan Masalah ---
 \section{Rumusan Masalah}
-Rumusan Masalah berisi masalah utama yang dibahas dalam tugas akhir. Rumusan masalah yang baik memiliki struktur sebagai berikut:
+Masalah utama yang akan diselesaikan dalam tugas akhir ini adalah belum adanya
+sistem kontrol akses yang terintegrasi, modern, dan aman di gedung ITB Innovation Park (IIP). Penggunaan metode akses konvensional seperti kunci fisik atau kartu akses memiliki kelemahan mendasar yang rentan terhadap risiko kehilangan,
+pencurian, dan duplikasi. Selain tidak efisien dalam pengelolaan, sistem ini tidak lagi memadai untuk melindungi aset-aset bernilai tinggi di dalamnya.
+
+Dalam menjawab permasalahan tersebut, akan dikembangkan sebuah prototipe
+sistem kontrol akses berbasis pengenalan wajah. Adapun rumusan masalah spesifik yang akan dibahas adalah sebagai berikut:
 \begin{enumerate}
-\item	Pokok persoalan dari kondisi atau situasi yang ada saat ini. Dengan kata lain, jelaskan kelemahan atau kekurangan dari kondisi, situasi, atau solusi yang dijelaskan pada latar belakang. Ini merupakan pokok rumusan masalah.
-\item	Elaborasi lebih lanjut urgensi penyelesaian masalah tersebut (mengapa penting untuk diselesaikan dan akibat yang dapat terjadi jika tidak diselesaikan).
-\item	Usulan singkat terkait dengan solusi yang ditawarkan untuk menyelesaikan persoalan.
-Penting untuk diperhatikan bahwa persoalan yang dideskripsikan pada subbab ini akan dipertanggungjawabkan di bab Evaluasi (apakah terselesaikan atau tidak).
+\item	Bagaimana merancang arsitektur sistem kontrol akses berbasis Internet of Things (IoT) yang mengintegrasikan kamera sebagai sensor dan kunci elektronik sebagai aktuator?
+\item	Bagaimana mengimplementasikan algoritma pengenalan wajah pada
+perangkat keras untuk dapat melakukan otentikasi pengguna secara akurat
+dan real-time?
+\item	Bagaimana performa sistem yang dibangun dalam hal kecepatan, akurasi,
+dan keandalan dalam memberikan atau menolak hak akses pada skenario
+penggunaan yang disimulasikan?
 \end{enumerate}
 
 % --- Tujuan ---
 \section{Tujuan}
-Tuliskan tujuan utama dan/atau tujuan detail yang akan dicapai dalam pelaksanaan tugas akhir. Fokuskan pada hasil akhir yang ingin diperoleh setelah tugas akhir diselesaikan, terkait dengan penyelesaian persoalan pada rumusan masalah. Penting untuk diperhatikan bahwa tujuan yang dideskripsikan pada subbab ini akan dipertanggungjawabkan di akhir pelaksanaan tugas akhir apakah tercapai atau tidak. Tuliskan kriteria keberhasilan tugas akhir ini.
+Tujuan utama dari tugas akhir ini adalah merancang, membangun, dan mengevaluasi sebuah prototipe fungsional "Sistem Pengenalan Wajah untuk Akses Kontrol Bangunan Cerdas" yang dapat diimplementasikan di lingkungan ITB Innovation Park (IIP).
+
+Secara lebih detail, tujuan yang ingin dicapai adalah sebagai berikut:
+\begin{enumerate}
+    \item Menghasilkan rancangan arsitektur sistem berbasis Internet of Things (IoT) yang mampu mengintegrasikan perangkat keras berupa kamera, unit pemrosesan, dan kunci elektronik secara efektif.
+    \item Mengimplementasikan algoritma pengenalan wajah yang dapat melakukan proses otentikasi pengguna secara akurat dan real-time pada perangkat yang telah dirancang.
+    \item Menganalisis dan mengukur kinerja prototipe sistem untuk memastikan fungsionalitasnya sesuai dengan kebutuhan, sehingga dapat menyelesaikan persoalan keamanan yang telah dijabarkan pada rumusan masalah.
+\end{enumerate}
+
+Tugas akhir ini dianggap berhasil apabila tujuan yang telah ditetapkan tercapai, yang akan diukur melalui kriteria-kriteria berikut:
+\begin{enumerate}
+    \item Terbangunnya sebuah prototipe sistem kontrol akses yang dapat berfungsi secara end-to-end, mulai dari pengambilan citra wajah oleh kamera hingga aktuator (kunci elektronik) berhasil membuka akses.
+    \item Sistem mampu melakukan otentikasi wajah pengguna yang terdaftar dengan tingkat akurasi di atas 95\% pada kondisi pengujian yang terkontrol (misalnya, pencahayaan dan posisi wajah yang ideal).
+    \item Waktu yang dibutuhkan sistem untuk menyelesaikan satu siklus proses otentikasi, mulai dari deteksi wajah hingga pengiriman perintah ke kunci elektronik. kurang dari 3 detik.
+    \item Sistem mampu secara konsisten membedakan antara pengguna terdaftar (memberikan akses) dan pengguna tidak terdaftar (menolak akses).
+\end{enumerate}
 
 % --- Batasan Masalah ---
 \section{Batasan Masalah}
-Tuliskan batasan-batasan yang diambil dalam pelaksanaan tugas akhir. Batasan ini dapat dihindari (bersifat opsional, tidak perlu ada) jika topik atau judul tugas akhir dibuat cukup spesifik.
+Berikut merupakan beberapa batasan yang ditetapkan untuk memfokuskan ruang lingkup pengerjaan dan memastikan hasil dari tugas akhir ini relevan dengan tujuan yang telah ditetapkan:
+\begin{enumerate}
+    \item Tugas akhir ini dikerjakan secara berkelompok yang terdiri dari 3 orang mahasiswa, yaitu Axelius Davin (NIM 18222016), Muhammad Rifa (NIM 18222004), dan Natanael Steven (NIM 18222054). 
+\end{enumerate}
 
 % --- Metodologi Pengerjaan TA ---
 \section{Metodologi}
-Tuliskan semua tahapan yang akan dilalui selama pelaksanaan tugas akhir. Tahapan ini spesifik untuk menyelesaikan persoalan tugas akhir. Khusus untuk penyusunan proposal ini, jelaskan secara detail:
+Tahapan yang akan dilalui selama pelaksanaan tugas akhir ini terdiri dari empat bagian, yaitu:
 \begin{enumerate}
-\item	Tahapan investigasi pengumpulan fakta di latar belakang untuk merumuskan masalah.
-\item	Langkah-langkah pencarian, pengelompokan, dan penapisan literatur atau sumber informasi untuk mengumpulkan informasi yang relevan tentang topik yang diangkat, termasuk teori (konsep atau teori apa saja yang perlu dicari), hal-hal yang telah dicapai oleh orang lain (cara mencari dan kata kuncinya), dan berbagai informasi pendukung, untuk mencari solusi terhadap masalah yang dibahas. Gunakan metodologi yang tepat dalam menggali informasi dan dokumentasikan prosesnya (termasuk rekaman wawancara atau survei) di dalam Lampiran, termasuk tautan ke video atau foto. Hasil penggalian informasi ini akan dijelaskan secara sistematis di Bab II Studi Literatur.
+    \item	Perumusan Masalah dan Studi Kebutuhan
+    
+    Tahap awal pengerjaan adalah perumusan masalah dan studi kebutuhan, yang dimulai dengan observasi awal terhadap kondisi gedung ITB Innovation Park (IIP) yang belum memiliki sistem kontrol akses optimal. Fakta dari observasi ini kemudian divalidasi melalui diskusi informal dengan pihak terkait untuk mengonfirmasi urgensi masalah dan memahami persyaratan dasar sistem yang dibutuhkan. Berdasarkan temuan tersebut, dirumuskanlah pokok permasalahan utama mengenai kerentanan sistem akses konvensional, yang menjadi fondasi bagi penulisan Latar Belakang dan Rumusan Masalah.
+    \item	Studi Literatur
+    
+    Selanjutnya, dilakukan studi literatur untuk membangun landasan teori dan tinjauan teknologi yang relevan. Tahap ini dimulai dengan mengidentifikasi kebutuhan informasi yang mencakup konsep dasar seperti Computer Vision dan arsitektur Internet of Things (IoT), tinjauan state-of-the-art dari penelitian sejenis, serta informasi pendukung berupa dokumentasi teknis. Pencarian literatur dilakukan secara strategis pada portal publikasi ilmiah menggunakan kombinasi kata kunci spesifik seperti "face recognition access control" dan "IoT smart building security". Seluruh literatur yang terkumpul kemudian dikelompokkan dan ditapis berdasarkan relevansi serta kebaruannya untuk memastikan solusi yang dirancang didasarkan pada pengetahuan yang solid dan mutakhir.
+    \item   Perancangan dan Pengembangan Sistem
+    
+    Setelah landasan teori terbentuk, pengerjaan dilanjutkan dengan tahap perancangan dan pengembangan sistem. Tahap ini diawali dengan perancangan arsitektur sistem secara menyeluruh, baik dari sisi perangkat keras maupun perangkat lunak. Kemudian, dilakukan pengembangan perangkat keras yang meliputi perakitan komponen IoT seperti Single-Board Computer (Raspberry Pi), kamera, dan kunci elektronik. Secara paralel, perangkat lunak dikembangkan dengan mengimplementasikan kode program untuk modul akuisisi citra, algoritma pengenalan wajah, dan logika kontrol. Puncak dari tahap ini adalah proses integrasi untuk menggabungkan modul perangkat keras dan perangkat lunak menjadi satu kesatuan prototipe yang fungsional.
+    \item   Pengujian dan Evaluasi Sistem
+    
+    Tahap terakhir dari metodologi ini adalah pengujian dan evaluasi sistem. Proses ini dimulai dengan merancang skenario pengujian yang sistematis berdasarkan kriteria keberhasilan yang telah ditetapkan, seperti akurasi, kecepatan, dan keandalan. Selanjutnya, prototipe diuji coba sesuai skenario tersebut menggunakan dataset wajah pengguna terdaftar dan tidak terdaftar. Data yang diperoleh dari hasil pengujian kemudian dianalisis secara kuantitatif untuk mengevaluasi performa sistem. Evaluasi ini bertujuan untuk memvalidasi apakah solusi yang dibangun berhasil menjawab rumusan masalah dan mencapai tujuan tugas akhir, serta mengidentifikasi potensi perbaikan di masa depan.
 \end{enumerate}

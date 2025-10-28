@@ -1,0 +1,16 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'ProposalTA.blg'
+[169] biber-MSWIN64:342> INFO - === 
+[227] Biber.pm:421> INFO - Reading 'ProposalTA.bcf'
+[545] Biber.pm:1002> INFO - Found 1 citekeys in bib section 0
+[568] Biber.pm:4487> INFO - Processing section 0
+[584] Biber.pm:4678> INFO - Looking for bibtex file 'daftar-pustaka.bib' for section 0
+[656] bibtex.pm:1713> INFO - LaTeX decoding ...
+[683] bibtex.pm:1519> INFO - Found BibTeX data source 'daftar-pustaka.bib'
+[740] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[740] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'variable = shifted' with 'variable = non-ignorable'
+[740] UCollate.pm:68> INFO - Overriding locale 'indonesian' defaults 'level = 4' with 'level = 2'
+[740] Biber.pm:4307> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'indonesian'
+[741] Biber.pm:4313> INFO - No sort tailoring available for locale 'indonesian'
+[749] bbl.pm:676> INFO - Writing 'ProposalTA.bbl' with encoding 'UTF-8'
+[750] bbl.pm:779> INFO - Output to ProposalTA.bbl
