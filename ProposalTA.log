@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.27)  28 OCT 2025 08:10
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.27)  4 NOV 2025 10:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -792,10 +792,7 @@ Package csquotes Warning: No style for language 'indonesian'.
 (csquotes)                Using fallback style on input line 177.
 
 Package csquotes Info: Redefining alias 'default' -> 'fallback'.
-(./ProposalTA.aux (c:/texlive/2025/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
-Package babel Info: Importing data for english
-(babel)             from babel-en.ini. Reported on input line 61.
-)
+(./ProposalTA.aux)
 \openout1 = `ProposalTA.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 177.
@@ -948,11 +945,6 @@ Package biblatex Info: ... file 'indonesian.lbx' not found.
 Package biblatex Warning: Language 'indonesian' not supported.
 (biblatex)                Using dummy definitions on input line 177.
 
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
-(c:/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
-)
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -961,7 +953,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ProposalTA.bbl' found.
- (./ProposalTA.bbl)
+(./ProposalTA.bbl)
 Package biblatex Info: Reference section=0 on input line 177.
 Package biblatex Info: Reference segment=0 on input line 177.
 File: image/ganesha.jpg Graphic file (type bmp)
@@ -1079,21 +1071,21 @@ Bab I.
 
 
 ]
-Overfull \hbox (10.63797pt too wide) in paragraph at lines 21--22
+Overfull \hbox (10.63797pt too wide) in paragraph at lines 23--24
 []\TU/TimesNewRoman(0)/m/n/12 Deteksi Pengunjung Tidak Dikenal: Menambahkan fitur keamanan untuk meng-
  []
 
 
 
 [2]
-Overfull \hbox (4.1868pt too wide) in paragraph at lines 59--60
+
+[3]
+Overfull \hbox (4.1868pt too wide) in paragraph at lines 61--62
 []\TU/TimesNewRoman(0)/m/n/12 Sistem mampu secara konsisten membedakan antara pengguna terdaftar (mem-
  []
 
 
-
-[3]
-Overfull \hbox (13.67468pt too wide) in paragraph at lines 66--67
+Overfull \hbox (13.67468pt too wide) in paragraph at lines 68--69
 \TU/TimesNewRoman(0)/m/n/12 siswa, yaitu Axelius Davin (NIM 18222016), Muhammad Rifa (NIM 18222004),
  []
 
@@ -1103,91 +1095,94 @@ Overfull \hbox (13.67468pt too wide) in paragraph at lines 66--67
 
 [5]
 Bab II.
-File: image/gambar1.png Graphic file (type bmp)
-<image/gambar1.png>
 
-
-[6
-
-]
-Overfull \hbox (5.19266pt too wide) in paragraph at lines 31--32
-[]\TU/TimesNewRoman(0)/m/n/12 Gambar yang didapat di suatu pustaka atau referensi sebaiknya digambar ulang,
+Overfull \hbox (1.5312pt too wide) in paragraph at lines 11--12
+\TU/TimesNewRoman(0)/m/n/12 Penelitian ini berfokus pada penyelesaian masalah variabilitas kualitas gambar. Kon-
  []
 
 
 
-[7] [8]
+[6
 
-[9]
+]) (./Bab III - Analisis-Masalah.tex
+
+[7]
+
+[8]
+Bab III.
+
+
+[9
+
+]
 
 [10]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 195.
- (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 204.
-
-Overfull \hbox (19.22398pt too wide) in paragraph at lines 221--227
- [][] 
+Overfull \hbox (0.15164pt too wide) in paragraph at lines 66--67
+\TU/TimesNewRoman(0)/m/n/12 tara pengguna terdaftar (memberikan akses) dan pengguna tidak terdaftar (me-
  []
 
 
 
 [11]
 
-[12]) (./Bab III - Analisis-Masalah.tex
+[12]
+Overfull \hbox (10.59657pt too wide) in paragraph at lines 108--120
+ [][] 
+ []
+
+) (./Bab IV - Desain-Konsep-Solusi.tex
+Overfull \hbox (5.55594pt too wide) in paragraph at lines 122--4
+\TU/TimesNewRoman(0)/m/n/12 keunggulannya yang signifikan pada kriteria Kemudahan Pengguna/Higienitas (Skor:
+ []
+
+
 
 [13]
-Bab III.
+Bab IV.
 
 
 [14
 
 ]
-Overfull \hbox (3.07547pt too wide) in paragraph at lines 41--42
-[]\TU/TimesNewRoman(0)/m/n/12 FR-3: Sistem harus dapat memberikan perintah untuk membuka aktuator (kun-
- []
 
+[15]
 
+[16]) (./Bab V - Rencana-Selanjutnya.tex
 
-[15]) (./Bab IV - Desain-Konsep-Solusi.tex
+[17]
 
-[16]
-Bab IV.
-) (./Bab V - Rencana-Selanjutnya.tex
-
-[17
-
-]
+[18]
 Bab V.
 )
 
-[18
+[19
 
 ]
 
-[19
+LaTeX Warning: Empty bibliography on input line 377.
 
 
-] (./ProposalTA.aux)
+Package caption Warning: Unused \captionsetup[lstlisting] on input line 357.
+See the caption package documentation for explanation.
+
+(./ProposalTA.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
  ***********
 Package rerunfilecheck Info: File `ProposalTA.out' has not changed.
-(rerunfilecheck)             Checksum: 5B1EEC3BC33F755048E78D064F233164;5973.
+(rerunfilecheck)             Checksum: B529130947DA44A0FFA65FEEAE8987CD;7078.
 Package logreq Info: Writing requests to 'ProposalTA.run.xml'.
 \openout1 = `ProposalTA.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31475 strings out of 468387
- 620537 string characters out of 5444258
- 1993439 words of memory out of 5000000
- 59616 multiletter control sequences out of 15000+600000
- 633110 words of font info for 87 fonts, out of 8000000 for 9000
+ 29603 strings out of 468387
+ 584159 string characters out of 5444258
+ 1948710 words of memory out of 5000000
+ 57765 multiletter control sequences out of 15000+600000
+ 634474 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,14n,93p,1235b,6298s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,8n,93p,1307b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on ProposalTA.pdf (26 pages).

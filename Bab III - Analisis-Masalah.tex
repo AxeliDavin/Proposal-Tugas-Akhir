@@ -8,24 +8,40 @@
 \label{chap:analisis-masalah}
 
 \section{Analisis Kondisi Saat Ini}
-Model konseptual sistem kontrol akses yang ada saat ini di Gedung ITB Innovation Park (IIP) masih mengandalkan, atau setidaknya mempertimbangkan, metode konvensional. Komponen utamanya adalah kunci fisik dan kartu akses. Ketiadaan sistem modern yang terimplementasi secara optimal ini  menimbulkan beberapa masalah fundamental.
+Model konseptual sistem kontrol akses yang ada saat ini di Gedung ITB Innovation Park (IIP) masih mengandalkan, atau setidaknya mempertimbangkan, metode konvensional. Komponen utamanya adalah kunci fisik dan kartu akses. Ketiadaan sistem modern yang terimplementasi secara optimal ini menimbulkan beberapa masalah fundamental.
 
-Masalah utama dari sistem konvensional ini adalah tingkat keamanannya yang terbatas. Metode kunci fisik dan kartu akses sangat rentan terhadap risiko umum seperti kehilangan, pencurian, atau duplikasi yang tidak sah. Mengingat Gedung IIP berfungsi sebagai pusat inovasi yang menyimpan berbagai aset bernilai tinggi , celah keamanan ini menciptakan sebuah kerentanan keamanan yang nyata dan mendesak untuk segera diatasi. Sistem yang ada saat ini (atau ketiadaan sistem yang memadai) dinilai tidak lagi efisien dalam pengelolaan dan tidak mampu melindungi aset di dalamnya secara optimal. 
+Analisis kondisi saat ini didasarkan pada observasi lapangan serta analisis dokumen yang relevan. Dari observasi, teridentifikasi bahwa titik-titik akses utama belum dilengkapi sistem keamanan terotomatisasi. Analisis dokumen mencakup tinjauan terhadap Standar Operasional Prosedur (SOP) keamanan gedung dan denah arsitektur untuk memetakan alur pergerakan manusia serta posisi strategis untuk penempatan sistem kontrol. Gambar \ref{fig:denah-iip} menunjukkan denah Gedung IIP dan titik-titik akses yang menjadi fokus dalam penelitian ini.
+
+\begin{figure}[H] % Menggunakan [H] agar gambar tidak 'mengambang'
+    \centering
+    % Ganti 'placeholder-denah.png' dengan nama file gambar 
+    % \includegraphics[width=0.8\textwidth]{images/placeholder-denah.png} 
+    \framebox(300,150){Placeholder: Denah Gedung IIP dan Titik Akses}
+    \caption{Denah Gedung IIP dan Titik Akses Kritis}
+    \label{fig:denah-iip}
+\end{figure}
+
+Masalah utama dari sistem konvensional ini adalah tingkat keamanannya yang terbatas. Metode kunci fisik dan kartu akses sangat rentan terhadap risiko umum seperti kehilangan, pencurian, atau duplikasi yang tidak sah. Mengingat Gedung IIP berfungsi sebagai pusat inovasi yang menyimpan berbagai aset bernilai tinggi, celah keamanan ini menciptakan sebuah kerentanan keamanan yang nyata dan mendesak untuk segera diatasi. Sistem yang ada saat ini (atau ketiadaan sistem yang memadai) dinilai tidak lagi efisien dalam pengelolaan dan tidak mampu melindungi aset di dalamnya secara optimal.
 
 \section{Analisis Kebutuhan}
-Analisis Kebutuhan adalah proses untuk mendefinisikan apa yang harus dilakukan oleh sistem untuk menyelesaikan masalah yang ada.
+Proses analisis kebutuhan sistem dilakukan untuk mendefinisikan apa yang harus dilakukan oleh sistem guna menyelesaikan masalah yang ada. Metode pengumpulan kebutuhan yang digunakan adalah:
+\begin{enumerate}
+    \item {Wawancara Semi-Terstruktur:} Dilakukan dengan pemangku kepentingan, yaitu perwakilan dari Manajemen/Pengelola Gedung IIP untuk memahami kebutuhan dari sisi keamanan dan operasional, serta wawancara dengan beberapa Penghuni Gedung (staf/peneliti) untuk memahami kebutuhan dari sisi pengguna akhir.
+    \item {Observasi Langsung:} Mengamati secara langsung proses keluar-masuk gedung pada jam-jam sibuk untuk mengidentifikasi potensi masalah alur dan kebutuhan non-fungsional seperti kecepatan akses.
+\end{enumerate}
+Hasil dari kedua metode ini digunakan untuk merumuskan masalah pengguna serta kebutuhan fungsional dan non-fungsional.
 
 \subsection{Identifikasi Masalah Pengguna}
-Berdasarkan analisis kondisi saat ini, terdapat dua kelompok pengguna utama dengan masalah yang spesifik:
+Berdasarkan analisis kondisi saat ini dan metode pengumpulan kebutuhan, terdapat dua kelompok pengguna utama dengan masalah yang spesifik:
 \begin{enumerate}
-    \item  Penghuni Gedung (Pegawai, Anggota Terdaftar, Staf)
+    \item Penghuni Gedung (Pegawai, Anggota Terdaftar, Staf)
         \begin{enumerate}
             \item Mengalami kesulitan dengan metode akses konvensional yang merepotkan (harus membawa kartu/kunci) dan tidak higienis (harus menyentuh perangkat bersama).
             \item Membutuhkan sistem yang memberikan "kemudahan bagi pengguna".
             \item Memiliki risiko keamanan pribadi jika kunci atau kartu akses mereka hilang atau diduplikasi.
         \end{enumerate}
 
-    \item  Manajemen/Pengelola Gedung IIP
+    \item Manajemen/Pengelola Gedung IIP
         \begin{enumerate}
             \item Menghadapi masalah utama berupa kerentanan keamanan terhadap aset bernilai tinggi.
             \item Kesulitan mengelola dan melacak hak akses secara efisien menggunakan metode konvensional.
@@ -34,38 +50,73 @@ Berdasarkan analisis kondisi saat ini, terdapat dua kelompok pengguna utama deng
 \end{enumerate}
 
 \subsection{Kebutuhan Fungsional}
-Berdasarkan rumusan masalah dan tujuan, kebutuhan fungsional untuk prototipe yang diusulkan adalah sebagai berikut:
+Berdasarkan rumusan masalah dan tujuan, kebutuhan fungsional (KF) untuk prototipe yang diusulkan adalah sebagai berikut:
 \begin{enumerate}
-    \item FR-1: Sistem harus dapat mengakuisisi citra wajah pengguna secara real-time melalui sensor kamera.
-    \item FR-2: Sistem harus dapat melakukan proses otentikasi (verifikasi) dengan membandingkan citra wajah yang ditangkap dengan basis data pengguna yang terdaftar.
-    \item FR-3: Sistem harus dapat memberikan perintah untuk membuka aktuator (kunci elektronik) jika otentikasi pengguna berhasil (memberikan hak akses).
-    \item FR-4: Sistem harus dapat menolak akses (tidak mengirim perintah ke kunci elektronik) jika otentikasi gagal atau wajah tidak terdaftar.
+    \item KF-1: Sistem harus dapat mengakuisisi citra wajah pengguna secara real-time melalui sensor kamera.
+    \item KF-2: Sistem harus dapat melakukan proses otentikasi (verifikasi) dengan membandingkan citra wajah yang ditangkap dengan basis data pengguna yang terdaftar.
+    \item KF-3: Sistem harus dapat memberikan perintah untuk membuka aktuator (kunci elektronik) jika otentikasi pengguna berhasil (memberikan hak akses).
+    \item KF-4: Sistem harus dapat menolak akses (tidak mengirim perintah ke kunci elektronik) jika otentikasi gagal atau wajah tidak terdaftar.
 \end{enumerate}
 
 \subsection{Kebutuhan Nonfungsional}
-Kebutuhan nonfungsional didefinisikan secara spesifik dalam kriteria keberhasilan tugas akhir ini:
+Kebutuhan nonfungsional (KNF) didefinisikan secara spesifik dalam kriteria keberhasilan tugas akhir ini:
 \begin{enumerate}
-    \item Kecepatan (Waktu Respon): Waktu yang dibutuhkan sistem untuk menyelesaikan satu siklus proses otentikasi—mulai dari deteksi wajah hingga pengiriman perintah ke kunci elektronik—harus kurang dari 3 detik .
-    \item Akurasi: Sistem harus mampu melakukan otentikasi wajah pengguna yang terdaftar dengan tingkat akurasi di atas 95\% pada kondisi pengujian yang terkontrol.
-    \item Keandalan (Reliability): Sistem harus mampu secara konsisten membedakan antara pengguna terdaftar (memberikan akses) dan pengguna tidak terdaftar (menolak akses).
+    \item KNF-1 (Kecepatan): Waktu yang dibutuhkan sistem untuk menyelesaikan satu siklus proses otentikasi—mulai dari deteksi wajah hingga pengiriman perintah ke kunci elektronik—harus kurang dari 3 detik.
+    \item KNF-2 (Akurasi): Sistem harus mampu melakukan otentikasi wajah pengguna yang terdaftar dengan tingkat akurasi di atas 95\% pada kondisi pengujian yang terkontrol.
+    \item KNF-3 (Keandalan): Sistem harus mampu secara konsisten membedakan antara pengguna terdaftar (memberikan akses) dan pengguna tidak terdaftar (menolak akses).
 \end{enumerate}
 
 \section{Analisis Pemilihan Solusi}
 
 \subsection{Alternatif Solusi}
-Berdasarkan studi yang dilakukan di Latar Belakang, terdapat dua kategori utama solusi untuk kontrol akses:
+Berdasarkan penelusuran literatur dan studi kasus pada sistem kontrol akses modern, diidentifikasi tiga alternatif solusi utama yang relevan untuk dibandingkan:
+
+\subsubsection{Solusi Konvensional (Kartu Akses/RFID)}
 \begin{enumerate}
-    \item Solusi Konvensional: Meliputi penggunaan kunci fisik dan kartu akses.
-    \item Solusi Modern (Biometrik): Meliputi teknologi seperti pemindai sidik jari, pemindai iris mata, dan pengenalan wajah.
+    \item {Konsep Dasar:} Menggunakan kartu berbasis *Radio-Frequency Identification* (RFID) yang di-tap pada sebuah pembaca (reader) untuk memverifikasi hak akses.
+    \item {Kelebihan:} Biaya implementasi per unit relatif rendah, teknologi matang, dan kecepatan otentikasi sangat cepat (kurang dari 1 detik).
+    \item {Keterbatasan:} Keamanan terbatas (kartu dapat hilang, dicuri, atau diduplikasi), merepotkan pengguna (harus selalu membawa kartu), dan biaya operasional untuk penggantian kartu yang hilang.
+\end{enumerate}
+
+\subsubsection{Solusi Biometrik (Sidik Jari)}
+\begin{enumerate}
+    \item {Konsep Dasar:} Menggunakan pemindai untuk merekam pola unik sidik jari pengguna dan mencocokkannya dengan basis data.
+    \item {Kelebihan:} Tingkat keamanan tinggi (sulit dipalsukan), tidak memerlukan perangkat tambahan yang harus dibawa pengguna.
+    \item {Keterbatasan:} Memerlukan kontak fisik (tidak higienis, menjadi masalah terutama pasca-pandemi), rentan gagal baca jika jari kotor atau basah, dan dapat menimbulkan antrian karena proses *scan* yang individual.
+\end{enumerate}
+
+\subsubsection{Solusi Biometrik (Pengenalan Wajah)}
+\begin{enumerate}
+    \item {Konsep Dasar:} Menggunakan kamera untuk menangkap fitur wajah pengguna, kemudian algoritma *computer vision* memverifikasi identitas pengguna tersebut.
+    \item {Kelebihan:} Bersifat *non-kontak* (higienis dan nyaman), keamanan tinggi, dan tidak memerlukan perangkat tambahan. Proses bisa berjalan pasif tanpa interaksi eksplisit dari pengguna.
+    \item {Keterbatasan:} Biaya implementasi awal bisa lebih tinggi (memerlukan kamera dan unit pemrosesan yang mumpuni), akurasi dapat dipengaruhi oleh kondisi pencahayaan ekstrem, penggunaan masker, atau perubahan penampilan drastis.
 \end{enumerate}
 
 \subsection{Analisis Penentuan Solusi}
-Solusi Konvensional (Alternatif 1) ditolak meskipun biaya implementasinya mungkin relatif rendah. Alasan utamanya adalah solusi ini memiliki tingkat keamanan yang terbatas dan tidak menyelesaikan masalah inti, yaitu kerentanan terhadap risiko duplikasi dan kehilangan.
+Untuk memilih solusi terbaik secara sistematis dan objektif, digunakan metode \textit{Weighted Scoring Model} (WSM). Kriteria penilaian dan bobotnya ditentukan berdasarkan prioritas kebutuhan yang diidentifikasi pada bagian Analisis Kebutuhan. Kriteria utama meliputi {Keamanan} (Bobot: 40\%), {Kemudahan Pengguna/Higienitas} (Bobot: 30\%), {Kecepatan Akses} (Bobot: 20\%), dan {Biaya Implementasi Awal} (Bobot: 10\%).
 
-Dari Solusi Biometrik (Alternatif 2), teknologi pengenalan wajah dipilih sebagai solusi yang diusulkan. Analisis penentuan ini didasarkan pada beberapa keunggulan kompetitif yang ditawarkannya dibandingkan biometrik lain:
-\begin{enumerate}
-    \item Higienis dan Nyaman: Bersifat non-kontak (contactless), yang lebih higienis dan memberikan kemudahan lebih bagi pengguna.
-    \item Tidak Perlu Perangkat Tambahan: Pengguna tidak perlu membawa perangkat fisik tambahan seperti kartu atau mengingat PIN.
-    \item Akurasi yang Andal: Teknologi pengenalan wajah modern memiliki tingkat akurasi yang semakin andal untuk kebutuhan keamanan.
-\end{enumerate}
-Berdasarkan analisis ini, pengenalan wajah dianggap sebagai pilihan yang paling sesuai untuk diterapkan di lingkungan modern seperti Gedung IIP.
+Setiap alternatif solusi diberi skor 1 (Sangat Buruk) hingga 5 (Sangat Baik) untuk setiap kriteria.
+
+\begin{table}[H]
+\centering
+\caption{Analisis Penentuan Solusi Menggunakan Weighted Scoring Model}
+\label{tab:wsm-solusi}
+
+\small
+\setlength{\tabcolsep}{4pt}
+
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Kriteria Penilaian} & \textbf{Bobot} & \textbf{Kartu Akses (RFID)} & \textbf{Sidik Jari} & \textbf{Pengenalan Wajah} \\
+\midrule
+Keamanan & 40\% & Skor: 2 (1.0) & Skor: 4 (1.6) & Skor: 4 (1.6) \\
+Kemudahan/Higienitas & 30\% & Skor: 3 (0.9) & Skor: 2 (0.6) & Skor: 5 (1.5) \\
+Kecepatan Akses & 20\% & Skor: 5 (1.0) & Skor: 3 (0.6) & Skor: 4 (0.8) \\
+Biaya Implementasi & 10\% & Skor: 5 (0.5) & Skor: 4 (0.4) & Skor: 3 (0.3) \\
+\midrule
+\textbf{Total Skor} & \textbf{100\%} & \textbf{3.4} & \textbf{3.2} & \textbf{4.2} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Berdasarkan hasil pada Tabel \ref{tab:wsm-solusi}, {Solusi Pengenalan Wajah} memperoleh total skor tertinggi (4.2). Meskipun sedikit lebih mahal dalam implementasi awal (Skor: 3), keunggulannya yang signifikan pada kriteria {Kemudahan Pengguna/Higienitas} (Skor: 5) dan {Keamanan} (Skor: 4) menjadikannya pilihan yang paling sesuai untuk diterapkan di lingkungan modern seperti Gedung IIP, sejalan dengan penyelesaian masalah utama yang telah diidentifikasi.

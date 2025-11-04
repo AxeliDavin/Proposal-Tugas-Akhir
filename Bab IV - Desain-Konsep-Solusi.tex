@@ -3,7 +3,89 @@
 % ==========================================
 \chapter{DESAIN KONSEP SOLUSI}
 \label{chap:desain-konsep-solusi}
-Ilustrasikan desain konsep solusi dalam bentuk model konseptual dan penjelasan secara ringkas, 
-beserta perbedaannya dengan sistem saat ini. Ilustrasi harus dapat dibandingkan (\textit{before} and \textit{after}). 
-Karena masih berupa proposal, bab ini hanya berisi gambar desain konsep solusi tersebut dan 
-penjelasan perbandingannya dengan gambar sistem yang ada saat ini (yang tergambar di awal Bab \ref{chap:analisis-masalah}).
+Bab ini berisi penjelasan detail tentang desain dan arsitektur sistem yang diusulkan untuk menjawab rumusan masalah yang telah dijabarkan pada Bab I. Penjelasan diberikan secara sistematis, dimulai dari tahapan perancangan yang dilakukan, hingga hasil akhir desain sistem yang akan dibangun.
+
+%Ilustrasikan desain konsep solusi dalam bentuk model konseptual dan penjelasan secara ringkas, 
+%beserta perbedaannya dengan sistem saat ini. Ilustrasi harus dapat dibandingkan (\textit{before} and \textit{after}). 
+%Karena masih berupa proposal, bab ini hanya berisi gambar desain konsep solusi tersebut dan 
+%penjelasan perbandingannya dengan gambar sistem yang ada saat ini (yang tergambar di awal Bab \ref{chap:analisis-masalah}).
+
+\section{Tahapan Desain}
+\label{sec:tahapan-desain}
+Proses perancangan sistem dilakukan melalui beberapa tahapan yang logis dan sistematis untuk memastikan bahwa hasil desain selaras dengan kebutuhan fungsional dan nonfungsional yang telah diidentifikasi pada Bab III. Tahapan ini tidak didasarkan pada preferensi pribadi, melainkan pada pendekatan rekayasa sistem yang umum digunakan untuk pengembangan prototipe berbasis \textit{Internet of Things} (IoT) dan kecerdasan buatan.
+
+Gambar \ref{fig:tahapan-desain} menyajikan diagram alir (flowchart) dari langkah-langkah perancangan yang dilakukan.
+
+\begin{figure}[H]
+    \centering
+    % Ganti 'tahapan-desain.png' dengan nama file gambar diagram alir 
+    % \includegraphics[width=0.9\textwidth]{images/tahapan-desain.png}
+    \framebox(350,200){Placeholder: Diagram Alir Tahapan Desain}
+    \caption{Diagram Alir Tahapan Perancangan Sistem}
+    \label{fig:tahapan-desain}
+\end{figure}
+
+Penjelasan detail untuk setiap tahapan dalam diagram alir tersebut adalah sebagai berikut:
+
+\subsection{Perancangan Arsitektur Sistem}
+Tahapan pertama adalah merancang arsitektur sistem secara \textit{high-level}. Tahap ini berfokus pada penentuan komponen-komponen utama sistem, yaitu perangkat keras (\textit{hardware}), perangkat lunak (\textit{software}), dan basis data (\textit{database}). Tujuannya adalah untuk mendefinisikan bagaimana ketiga komponen utama tersebut saling berinteraksi untuk membentuk satu solusi yang terintegrasi dan dapat menjawab rumusan masalah pertama (RM-1).
+
+\subsection{Perancangan Perangkat Keras}
+Setelah arsitektur \textit{high-level} ditentukan, tahapan dilanjutkan dengan perancangan perangkat keras. Berdasarkan kebutuhan fungsional (KF-1, KF-3) dan nonfungsional (KNF-1), dilakukan pemilihan komponen spesifik untuk akuisisi citra, pemrosesan data, dan aktuator kontrol akses. Tahap ini mencakup perancangan skematik dan diagram koneksi antar komponen, seperti hubungan antara unit pemrosesan (misalnya \textit{Single-Board Computer}), kamera, dan kunci elektronik.
+
+\subsection{Perancangan Perangkat Lunak dan Algoritma}
+Tahap ini merupakan inti dari sistem dan berfokus untuk menjawab rumusan masalah kedua (RM-2). Perancangan perangkat lunak dibagi lagi menjadi beberapa sub-tahapan:
+\begin{enumerate}
+    \item {Perancangan Alur Akuisisi Citra:} Menentukan bagaimana sistem akan menangkap video \textit{stream} dari kamera dan mengambil \textit{frame} untuk diproses.
+    \item {Pemilihan dan Desain Algoritma:} Memilih model atau algoritma yang tepat untuk deteksi wajah (\textit{face detection}) dan pengenalan wajah (\textit{face recognition}).
+    \item {Perancangan Logika Kontrol:} Merancang alur logika \textit{if-then-else} yang akan mengambil keputusan (memberi atau menolak akses) berdasarkan hasil dari algoritma pengenalan wajah.
+\end{enumerate}
+
+\subsection{Perancangan Basis Data}
+Tahapan terakhir adalah merancang struktur penyimpanan data. Untuk memenuhi kebutuhan fungsional KF-2, sistem memerlukan basis data untuk menyimpan informasi pengguna terdaftar. Tahap ini menentukan bagaimana data pengguna (misalnya ID, nama) dan data biometrik mereka (misalnya \textit{feature embeddings} dari wajah) akan disimpan, diindeks, dan diakses oleh perangkat lunak untuk proses pencocokan.
+
+\section{Hasil Desain}
+\label{sec:hasil-desain}
+Hasil akhir dari seluruh tahapan perancangan di atas adalah arsitektur sistem usulan yang akan diimplementasikan.
+
+\subsection{Arsitektur Sistem Usulan}
+Arsitektur sistem yang diusulkan dirancang sebagai sistem \textit{edge computing}, di mana seluruh proses komputasi (deteksi dan pengenalan) terjadi secara lokal di perangkat yang terpasang di titik akses. Hal ini dipilih untuk memenuhi kebutuhan nonfungsional KNF-1 (Kecepatan) dengan mengurangi latensi jaringan.
+
+Gambar \ref{fig:arsitektur-sistem} mengilustrasikan arsitektur sistem usulan secara detail.
+
+\begin{figure}[H]
+    \centering
+    % Ganti 'arsitektur-sistem.png' dengan nama file gambar diagram arsitektur 
+    % \includegraphics[width=0.8\textwidth]{images/arsitektur-sistem.png}
+    \framebox(350,200){Placeholder: Diagram Arsitektur Sistem Usulan}
+    \caption{Diagram Arsitektur Sistem Kontrol Akses}
+    \label{fig:arsitektur-sistem}
+\end{figure}
+
+Alur kerja sistem berdasarkan arsitektur tersebut adalah sebagai berikut:
+\begin{enumerate}
+    \item {Pengguna} berdiri di depan perangkat.
+    \item {Kamera} (Sensor) menangkap video \textit{stream} secara terus-menerus dan mengirimkannya ke {Unit Pemrosesan}.
+    \item {Unit Pemrosesan} (misal: Raspberry Pi) menjalankan {Modul Perangkat Lunak}.
+    \item Perangkat lunak pertama-tama mendeteksi adanya wajah dalam \textit{stream} (KF-1).
+    \item Jika wajah terdeteksi, algoritma pengenalan wajah mengekstraksi fitur biometrik dari wajah tersebut.
+    \item Fitur ini kemudian dicocokkan dengan {Basis Data Wajah Terdaftar} yang tersimpan di dalam perangkat (KF-2).
+    \item {Logika Kontrol} mengambil keputusan:
+        \begin{enumerate}
+            \item Jika fitur cocok (terdaftar), sinyal "BUKA" dikirim ke {Aktuator} (KF-3).
+            \item Jika fitur tidak cocok (tidak terdaftar), sinyal "TOLAK" dikirim (atau tidak ada sinyal) (KF-4).
+        \end{enumerate}
+    \item {Kunci Elektronik} (Aktuator) membuka atau tetap mengunci pintu.
+\end{enumerate}
+
+\subsection{Desain Alur Logika Perangkat Lunak}
+Untuk menjawab RM-2 secara lebih rinci, alur logika perangkat lunak yang akan diimplementasikan dirancang seperti pada Gambar \ref{fig:flowchart-software}. Desain ini memastikan bahwa sumber daya pemrosesan hanya digunakan saat diperlukan (yaitu, saat wajah terdeteksi).
+
+\begin{figure}[H]
+    \centering
+    % Ganti 'flowchart-software.png' dengan nama file gambar diagram alir 
+    % \includegraphics[width=0.6\textwidth]{images/flowchart-software.png}
+    \framebox(250,300){Placeholder: Diagram Alir Logika Perangkat Lunak}
+    \caption{Diagram Alir Logika Proses Otentikasi}
+    \label{fig:flowchart-software}
+\end{figure}
