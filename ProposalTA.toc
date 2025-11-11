@@ -9,6 +9,7 @@
 \contentsline {section}{\numberline {I.4}Batasan Masalah}{4}{section.1.4}%
 \contentsline {section}{\numberline {I.5}Metodologi}{4}{section.1.5}%
 \contentsline {chapter}{\numberline {II}STUDI LITERATUR}{6}{chapter.2}%
+\contentsline {subsection}{\numberline {II.0.1}Penggunaan Kata "masing-masing" dan "setiap"}{6}{subsection.2.0.1}%
 \contentsline {section}{\numberline {II.1}Survei Pengenalan Wajah Berbasis Deep Learning}{6}{section.2.1}%
 \contentsline {section}{\numberline {II.2}AdaFace : Quality Adaptive Margin for Face Recognition}{6}{section.2.2}%
 \contentsline {section}{\numberline {II.3}Android Mobile Security and File Protection Using Face Recognition}{7}{section.2.3}%
@@ -27,12 +28,17 @@
 \contentsline {subsubsection}{\numberline {III.3.1.3}Solusi Biometrik (Pengenalan Wajah)}{12}{subsubsection.3.3.1.3}%
 \contentsline {subsection}{\numberline {III.3.2}Analisis Penentuan Solusi}{12}{subsection.3.3.2}%
 \contentsline {chapter}{\numberline {IV}DESAIN KONSEP SOLUSI}{14}{chapter.4}%
-\contentsline {section}{\numberline {IV.1}Tahapan Desain}{14}{section.4.1}%
-\contentsline {subsection}{\numberline {IV.1.1}Perancangan Arsitektur Sistem}{15}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {IV.1.2}Perancangan Perangkat Keras}{15}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {IV.1.3}Perancangan Perangkat Lunak dan Algoritma}{15}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {IV.1.4}Perancangan Basis Data}{16}{subsection.4.1.4}%
-\contentsline {section}{\numberline {IV.2}Hasil Desain}{16}{section.4.2}%
-\contentsline {subsection}{\numberline {IV.2.1}Arsitektur Sistem Usulan}{16}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {IV.2.2}Desain Alur Logika Perangkat Lunak}{17}{subsection.4.2.2}%
-\contentsline {chapter}{\numberline {V}RENCANA SELANJUTNYA}{19}{chapter.5}%
+\contentsline {section}{\numberline {IV.1}Model Konseptual Solusi (Before vs After)}{14}{section.4.1}%
+\contentsline {section}{\numberline {IV.2}Tahapan Desain}{15}{section.4.2}%
+\contentsline {subsection}{\numberline {IV.2.1}Perancangan Arsitektur Sistem}{16}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {IV.2.2}Perancangan Perangkat Keras}{16}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {IV.2.3}Perancangan Perangkat Lunak dan Algoritma}{17}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {IV.2.4}Perancangan Basis Data}{17}{subsection.4.2.4}%
+\contentsline {section}{\numberline {IV.3}Hasil Desain}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {IV.3.1}Arsitektur Sistem Usulan}{17}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {IV.3.2}Desain Alur Logika Perangkat Lunak}{18}{subsection.4.3.2}%
+\contentsline {chapter}{\numberline {V}RENCANA SELANJUTNYA}{20}{chapter.5}%
+\contentsline {section}{\numberline {V.1}Linimasa Pengerjaan}{20}{section.5.1}%
+\contentsline {section}{\numberline {V.2}Rencana Implementasi}{20}{section.5.2}%
+\contentsline {section}{\numberline {V.3}Desain Pengujian dan Evaluasi}{22}{section.5.3}%
+\contentsline {section}{\numberline {V.4}Analisis Risiko dan Mitigasi}{24}{section.5.4}%

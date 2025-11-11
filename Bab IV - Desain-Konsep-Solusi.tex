@@ -10,6 +10,46 @@ Bab ini berisi penjelasan detail tentang desain dan arsitektur sistem yang diusu
 %Karena masih berupa proposal, bab ini hanya berisi gambar desain konsep solusi tersebut dan 
 %penjelasan perbandingannya dengan gambar sistem yang ada saat ini (yang tergambar di awal Bab \ref{chap:analisis-masalah}).
 
+\section{Model Konseptual Solusi (Before vs After)}
+\label{sec:model-konseptual}
+Bagian ini mengilustrasikan perbedaan konseptual antara sistem kontrol akses saat ini (seperti yang dianalisis pada Bab \ref{chap:analisis-masalah}) dengan sistem yang diusulkan. Ilustrasi sistem sebelum (Gambar \ref{fig:konsep-before}) menunjukkan sistem konvensional, sedangkan ilustrasi sistem sesudah (Gambar \ref{fig:konsep-after}) menunjukkan desain konsep solusi yang diusulkan.
+
+\begin{figure}[H]
+    \centering
+    
+    % Sub-gambar 1: Before
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        % Ganti 'sistem-sebelum.png' dengan nama file gambar Anda
+        % \includegraphics[width=\textwidth]{images/sistem-sebelum.png}
+        \framebox(150,150){Placeholder: Model Konseptual SAAT INI}
+        \caption{Sistem Saat Ini (Konvensional)}
+        \label{fig:konsep-before}
+    \end{subfigure}
+    
+    \hfill % Memberi spasi horizontal antara gambar
+    
+    % Sub-gambar 2: After
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        % Ganti 'sistem-usulan.png' dengan nama file gambar Anda
+        % \includegraphics[width=\textwidth]{images/sistem-usulan.png}
+        \framebox(150,150){Placeholder: Model Konseptual USULAN}
+        \caption{Sistem Usulan (Pengenalan Wajah)}
+        \label{fig:konsep-after}
+    \end{subfigure}
+    
+    \caption{Perbandingan Model Konseptual Sistem (Before vs After)}
+    \label{fig:konsep-compare}
+\end{figure}
+
+Perbedaan utama antara kedua model tersebut adalah:
+\begin{enumerate}
+    \item \textbf{Sistem Saat Ini (Before):} Belum ada sistem sebelumnya
+    %Seperti terlihat pada Gambar \ref{fig:konsep-before}, sistem bergantung pada otentikasi berbasis \textit{kepemilikan} (kunci fisik/kartu). Alur kerjanya manual, bergantung pada intervensi fisik, rentan terhadap duplikasi atau kehilangan, dan tidak terdata secara otomatis.
+    \item \textbf{Sistem Usulan (After):} Gambar \ref{fig:konsep-after} menunjukkan sistem yang diusulkan berbasis otentikasi biometrik (\textit{inherence} atau "apa diri Anda"). Alur kerja menjadi terotomatisasi penuh, \textit{contactless} (tanpa sentuh), dan terintegrasi, yang secara fundamental meningkatkan keamanan dan efisiensi operasional.
+\end{enumerate}
+
 \section{Tahapan Desain}
 \label{sec:tahapan-desain}
 Proses perancangan sistem dilakukan melalui beberapa tahapan yang logis dan sistematis untuk memastikan bahwa hasil desain selaras dengan kebutuhan fungsional dan nonfungsional yang telah diidentifikasi pada Bab III. Tahapan ini tidak didasarkan pada preferensi pribadi, melainkan pada pendekatan rekayasa sistem yang umum digunakan untuk pengembangan prototipe berbasis \textit{Internet of Things} (IoT) dan kecerdasan buatan.

@@ -3,9 +3,154 @@
 % ==========================================
 \chapter{RENCANA SELANJUTNYA}
 \label{chap:rencana-selanjutnya}
-Jelaskan secara detail langkah-langkah rencana selanjutnya, hal-hal yang diperlukan atau akan disiapkan, dan risiko dan mitigasinya, yang meliputi:
-\begin{enumerate}
-\item	Rencana implementasi, termasuk alat dan bahan yang diperlukan, lingkungan, konfigurasi, biaya, dan sebagainya.
-\item	Desain pengujian dan evaluasi, misalnya metode verifikasi dan validasi.
-\item	Analisis risiko dan mitigasi, misalnya tindakan selanjutnya jika ada yang tidak berjalan sesuai rencana.
-\end{enumerate}
+% Paragraf pembuka telah dimodifikasi untuk mencakup linimasa
+Bab ini merincikan rencana dan jadwal pengerjaan selanjutnya untuk mengimplementasikan dan mengevaluasi solusi yang telah dirancang pada Bab IV. Rencana ini disajikan dalam bentuk linimasa (timeline) pengerjaan, yang kemudian dirincikan lebih lanjut ke dalam rencana implementasi, desain pengujian, dan analisis risiko.
+
+% =================================================================
+% === BAGIAN 1: LINIMASA (GANTT CHART) [REVISI DENGAN RESIZEBOX] ===
+% =================================================================
+\section{Linimasa Pengerjaan}
+\label{sec:linimasa}
+Pengerjaan Tugas Akhir direncanakan berlangsung selama 14 bulan, dimulai dari September 2025 (tahap studi awal dan proposal) hingga Oktober 2026. Implementasi sistem akan dimulai pada Januari 2026. Linimasa pengerjaan disajikan dalam bentuk Gantt chart pada Tabel \ref{tab:linimasa}.
+
+% Definisikan warna untuk Gantt chart
+\definecolor{ganttblue}{RGB}{100, 149, 237}
+
+\begin{table}[H]
+\centering
+\caption{Gantt Chart Rencana Pengerjaan Tugas Akhir}
+\label{tab:linimasa}
+
+% --- REVISI: Bungkus tabel dengan \resizebox ---
+% Ini akan memaksa tabel agar lebarnya sama dengan lebar teks halaman
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l c c c c c c}
+\toprule
+% --- Header kolom disingkat ---
+\textbf{Tahapan Kegiatan} & \textbf{Sep-Okt '25} & \textbf{Nov-Des '25} & \textbf{Jan-Mar '26} & \textbf{Apr-Jun '26} & \textbf{Jul-Sep '26} & \textbf{Okt '26} \\
+\midrule
+\textbf{1. Perencanaan dan Persiapan} & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & & & & \\
+Penyusunan Proposal (Studi Awal) & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & & & & & \\
+Studi Lanjut dan Persiapan Perangkat & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & & & & \\
+\midrule
+\textbf{2. Implementasi dan Pengembangan} & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & & \\
+Pengembangan Perangkat Keras & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & & & \\
+Pengembangan Perangkat Lunak & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & & \\
+Integrasi Sistem & & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & & \\
+\midrule
+\textbf{3. Pengujian dan Evaluasi} & & & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \\
+Pengujian dan Analisis Hasil & & & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \\
+\midrule
+\textbf{4. Penulisan dan Finalisasi} & & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} \\
+Penulisan Laporan (Bab 1-5) & & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} & \\
+Penulisan Bab 6 dan Finalisasi & & & & & & \multicolumn{1}{>{\columncolor{ganttblue}}c}{} \\
+\bottomrule
+\end{tabular}
+} % --- Akhir dari \resizebox ---
+\end{table}
+
+
+% =================================================================
+% === BAGIAN 2: RENCANA IMPLEMENTASI [ASLI DARI PDF] ===
+% =================================================================
+\section{Rencana Implementasi}
+\label{sec:rencana-implementasi}
+Tabel \ref{tab:rencana-implementasi-detail} merincikan rencana implementasi prototipe, mencakup perangkat keras, perangkat lunak, lingkungan, dan estimasi biaya yang diperlukan.
+
+\begin{longtable}{l p{0.7\textwidth}} % Teks di kolom kedua akan wrap
+\caption{Rencana Implementasi Prototipe}
+\label{tab:rencana-implementasi-detail} \\
+\toprule
+\textbf{Komponen / Aspek} & \textbf{Deskripsi dan Spesifikasi} \\
+\midrule
+\endfirsthead
+\caption{Rencana Implementasi Prototipe (lanjutan)} \\
+\toprule
+\textbf{Komponen / Aspek} & \textbf{Deskripsi dan Spesifikasi} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+% Data dari Tabel V.1 PDF
+\textbf{Perangkat Keras} & \\
+\textit{Unit Pemrosesan} & Raspberry Pi 4 Model B (4GB RAM) - Dipilih karena keseimbangan antara performa untuk \textit{edge computing} dan ketersediaan \textit{port} GPIO. \\
+\textit{Sensor (Kamera)} & Raspberry Pi Camera Module v2 - Untuk akuisisi citra wajah. \\
+\textit{Aktuator (Kunci)} & Solenoid Door Lock 12V, dikontrol melalui 5V Relay Module. \\
+\textit{Pendukung} & Power Supply 5V 3A (untuk Pi), Power Supply 12V 1A (untuk kunci), \textit{breadboard}, dan kabel \textit{jumper}. \\
+\midrule
+\textbf{Perangkat Lunak} & \\
+\textit{Sistem Operasi} & Raspberry Pi OS (sebelumnya Raspbian) - Berbasis Debian. \\
+\textit{Bahasa} & Python 3. \\
+\textit{Pustaka Utama} & OpenCV (untuk akuisisi dan pemrosesan gambar), Dlib (untuk deteksi \textit{landmark} dan pengenalan wajah), RPi.GPIO (untuk kontrol aktuator). \\
+\midrule
+\textbf{Lingkungan} & \\
+\textit{Lokasi} & Prototipe akan diuji pada simulasi pintu masuk di Laboratorium X, Gedung IIP. \\
+\textit{Konfigurasi} & Perangkat akan dipasang setinggi rata-rata wajah orang berdiri (sekitar 160-170 cm) dengan kondisi pencahayaan dalam ruangan yang terkontrol. \\
+\midrule
+\textbf{Estimasi Biaya} & \\
+\textit{Raspberry Pi 4} & Rp 1.000.000 \\
+\textit{Pi Camera Module} & Rp 400.000 \\
+\textit{Solenoid Lock + Relay} & Rp 150.000 \\
+\textit{Komponen Pendukung} & Rp 200.000 \\
+\midrule
+\textit{\textbf{Total Estimasi}} & \textbf{Rp 1.750.000} \\
+\end{longtable}
+
+
+% =================================================================
+% === BAGIAN 3: DESAIN PENGUJIAN [REVISI TABULARX] ===
+% =================================================================
+\section{Desain Pengujian dan Evaluasi}
+\label{sec:desain-pengujian}
+Pengujian dan evaluasi akan dilakukan untuk memverifikasi kebutuhan fungsional (KF) dan memvalidasi kebutuhan nonfungsional (KNF). Metode pengujian dirangkum pada Tabel \ref{tab:desain-pengujian-detail}.
+
+\begin{table}[H]
+\centering
+\caption{Desain Pengujian dan Evaluasi Sistem}
+\label{tab:desain-pengujian-detail}
+% Menggunakan tabularx agar pas dengan lebar halaman
+\begin{tabularx}{\textwidth}{ l >{\RaggedRight}X >{\RaggedRight}X }
+\toprule
+\textbf{Kriteria (dari Bab III)} & \textbf{Metode Verifikasi / Validasi} & \textbf{Parameter Keberhasilan} \\
+\midrule
+\textbf{Verifikasi Fungsional} & & \\
+KF-1 s.d. KF-4 & \textbf{Pengujian Fungsional (Black-box)} \newline Skenario: \newline 1. Uji pengguna terdaftar. \newline 2. Uji pengguna tidak terdaftar. & 1. Skenario 1: Kunci harus terbuka (KF-1, KF-2, KF-3 terpenuhi). \newline 2. Skenario 2: Kunci harus tetap tertutup (KF-4 terpenuhi). \\
+\midrule
+\textbf{Validasi Nonfungsional} & & \\
+KNF-1 (Kecepatan) & \textbf{Pengujian Waktu Respon} \newline Mengukur waktu (dengan \textit{stopwatch} atau \textit{logging} internal) dari saat wajah terdeteksi penuh oleh kamera hingga sinyal dikirim ke aktuator. & Waktu rata-rata dari 20 kali percobaan harus \textbf{kurang dari 3 detik}. \\
+\midrule
+KNF-2 (Akurasi) & \textbf{Pengujian Akurasi} \newline Membuat \textit{dataset} uji (10 pengguna terdaftar, 5 pengguna tidak terdaftar). Setiap pengguna diuji 5 kali dalam kondisi pencahayaan ideal. & $\text{Akurasi} = \frac{\text{TP} + \text{TN}}{\text{Total Percobaan}}$ \newline Akurasi harus \textbf{di atas 95\%}. \\
+\midrule
+KNF-3 (Keandalan) & \textbf{Pengujian Konsistensi} \newline Menggunakan 1 pengguna terdaftar dan 1 pengguna tidak terdaftar, diuji secara bergantian sebanyak 20 kali. & Sistem harus secara konsisten (100\%) memberi akses kepada pengguna terdaftar dan menolak pengguna tidak terdaftar. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+% =================================================================
+% === BAGIAN 4: ANALISIS RISIKO [REVISI TABULARX] ===
+% =================================================================
+\section{Analisis Risiko dan Mitigasi}
+\label{sec:analisis-risiko}
+Analisis risiko dilakukan untuk mengidentifikasi potensi masalah selama implementasi dan pengujian, beserta tindakan mitigasi yang disiapkan (Tabel \ref{tab:analisis-risiko-detail}).
+
+\begin{table}[H]
+\centering
+\caption{Analisis Risiko dan Mitigasi Proyek}
+\label{tab:analisis-risiko-detail}
+% Menggunakan tabularx agar pas dengan lebar halaman
+\begin{tabularx}{\textwidth}{ c >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X }
+\toprule
+\textbf{No.} & \textbf{Risiko} & \textbf{Dampak} & \textbf{Tindakan Mitigasi} \\
+\midrule
+1. & \textbf{Risiko Teknis:} \newline Akurasi pengenalan wajah rendah (di bawah 95\%). & Gagal memenuhi KNF-2. Pengguna terdaftar ditolak. & 1. Melakukan \textit{data augmentation} pada \textit{dataset} latih. \newline 2. Memastikan pencahayaan di area pengujian cukup dan merata. \\
+\midrule
+2. & \textbf{Risiko Teknis:} \newline Waktu respon lambat (lebih dari 3 detik). & Gagal memenuhi KNF-1. Menyebabkan antrian di pintu. & 1. Optimasi kode (misalnya, mengurangi resolusi \textit{frame} yang diproses). \newline 2. Menyesuaikan \textit{threshold} algoritma untuk kecepatan. \\
+\midrule
+3. & \textbf{Risiko Operasional:} \newline Kegagalan fungsi akibat variasi pencahayaan ekstrem (misal: terlalu gelap atau \textit{backlight}). & Akurasi menurun drastis pada jam-jam tertentu. & 1. Menambahkan sumber pencahayaan eksternal (misal: LED) pada prototipe. \newline 2. Mengumpulkan data latih tambahan pada kondisi pencahayaan tersebut. \\
+\midrule
+4. & \textbf{Risiko Proyek:} \newline Kerusakan komponen perangkat keras (misal: Raspberry Pi atau kamera). & Keterlambatan pengerjaan. & 1. Mengalokasikan dana darurat (telah termasuk dalam "Komponen Pendukung") untuk pembelian ulang. \\
+\bottomrule
+\end{tabularx}
+\end{table}

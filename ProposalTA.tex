@@ -96,7 +96,15 @@
 \usepackage[skip=12pt]{parskip}
 \usepackage{longtable}
 \usepackage{booktabs}
-\usepackage[id-ID]{datetime2}
+\usepackage[bahasai]{datetime2}
+
+\usepackage{float}      
+\usepackage{longtable}  
+\usepackage{colortbl}   
+\usepackage{array}      
+\usepackage{tabularx}   
+\usepackage{ragged2e}   
+\usepackage{amsmath}    
 
 
 \setcounter{tocdepth}{4} % kedalaman daftar isi sampai subsubbab
@@ -161,7 +169,7 @@
 % -- No Header dan No Footer ---
 \pagestyle{plain}
 
-% --- Ubah nama daftar listing ke "DAFTAR ALGORITMA" ---
+% --- Ubah nama daftar listing ke "DAFTAR KODE" ---
 % --- Harus diletakkan sebelum \begin{document} ---
 \renewcommand{\lstlistlistingname}{\centering\normalsize DAFTAR KODE} 
 \renewcommand{\lstlistingname}{Kode}
@@ -170,6 +178,29 @@
 
 
 \renewcommand \cftchapdotsep{4.5}
+%\cftsetrmarg{4em}  % Ini diset agar judul subbab tidak mepet ke nomor halaman di daftar isi
+% -- Atur indentasi judul bab, subbab, dan subsubbab di daftar isi ---
+\setlength{\cftchapindent}{0em}
+\setlength{\cftsecindent}{0em}
+\setlength{\cftsubsecindent}{0em}
+\setlength{\cftsubsubsecindent}{0em}
+
+\renewcommand*{\DTMbahasaimonthname}[1]{%
+  \ifcase#1 %
+    \or Januari%  % 1st month
+    \or Februari%  % 2nd month
+    \or Maret%  % 3rd month
+    \or April%  % 4th month
+    \or Mei%  % 5th month
+    \or Juni%  % 6th month
+    \or Juli%  % 7th month
+    \or Agustus%  % 8th month
+    \or September%  % 9th month
+    \or Oktober%  % 10th month
+    \or November%  % 11th month
+    \or Desember%  % 12th month
+  \fi
+}
 
 % ==========================================
 % AWAL DOKUMEN
